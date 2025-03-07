@@ -1,14 +1,14 @@
 {
-    "name": "@monorepo/user-service",
+    "name": "@monorepo/trading-service",
     "version": "1.0.0",
-    "description": "User service",
+    "description": "Trading service",
     "main": "dist/app.js",
     "types": "dist/app.d.ts",
     "scripts": {
-      "build": "tsc && cp user.json dist/",
+      "build": "tsc && cp stocks.json dist/",
       "start": "node dist/app.js",
       "test": "node --test dist/app.test.js",
-      "deploy": "echo 'Deploying user service' && sleep 1000"
+      "deploy": "echo 'Deploying trading service' && sleep 10000"
     },
     "keywords": [],
     "author": "",

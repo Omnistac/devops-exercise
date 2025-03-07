@@ -1,0 +1,19 @@
+{
+    "name": "@monorepo/maintenance",
+    "version": "1.0.0",
+    "description": "Maintenance scripts for preparing and modifying the destination environment",
+    "main": "dist/app.js",
+    "types": "dist/app.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "maintenance:db": "tsx database.ts",
+        "maintenance:kafka": "tsx kafka.ts",
+        "maintenance:s3": "tsx s3.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "tsx": "^4.19.3"
+    }
+}

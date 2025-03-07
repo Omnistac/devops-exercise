@@ -1,0 +1,32 @@
+{
+  "user1": {
+    "id": "user1",
+    "name": "John Doe",
+    "email": "john@example.com",
+    "role": "admin"
+  },
+  "user2": {
+    "id": "user2",
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "role": "user"
+  },
+  "user3": {
+    "id": "user3",
+    "name": "Bob Johnson",
+    "email": "bob@example.com",
+    "role": "user"
+  },
+  "user4": {
+    "id": "user4",
+    "name": "Alice Williams",
+    "email": "alice@example.com",
+    "role": "manager"
+  },
+  "user5": {
+    "id": "user5",
+    "name": "Charlie Brown",
+    "email": "charlie@example.com",
+    "role": "user"
+  }
+} 
