@@ -5,7 +5,7 @@
 # ACME Corp CI/CD Pipeline
 # Accepts two arguments:
 # 1. The type of pipeline to run (ci or cd)
-# 2. The modules the developer has changed
+# 2. The modules the developer has changed, separated by commas
 #
 ########################################################
 
@@ -33,5 +33,6 @@ fi
 # if CI - run the deploy
 
 if [ "$1" = "cd" ]; then
-    ./devops/deploy.sh
+    ./devops/publish.sh $VERSION
+    ./devops/deploy.sh $VERSION
 fi

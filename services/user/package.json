@@ -8,7 +8,8 @@
       "build": "tsc && cp user.json dist/",
       "start": "node dist/app.js",
       "test": "node --test dist/app.test.js",
-      "deploy": "echo 'Deploying user service' && sleep 1000"
+      "deploy": "echo 'Deploying user service' && sleep 10",
+      "docker:push": "echo 'Pushing user service dist at version $VERSION' && sleep 1000"
     },
     "keywords": [],
     "author": "",

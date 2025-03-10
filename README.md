@@ -7,7 +7,7 @@ This repository contains a monorepo structure with several services and shared m
 ## 🎯 Purpose
 
 This exercise is designed to help us understand how you:
-- Approach and analyze complex systems
+- Approach and analyze complex/unknown systems
 - Think about deployment strategies and orchestration
 - Optimize workflows for efficiency
 - Implement DevOps best practices
@@ -16,8 +16,8 @@ This exercise is designed to help us understand how you:
 
 ### Prerequisites
 
-- Node.js (v18+)
-- pnpm (v8+)
+- Node.js (v20+)
+- pnpm (v10+)
 
 ### Setup Instructions
 
@@ -81,17 +81,19 @@ devops-exercise/
 
 ## 🔍 Important Considerations
 
-- **This is an exercise** to evaluate how you program, think about problems, and design solutions.
+- This is an exercise to evaluate how you program, think about problems, and design solutions. During the exercise, it is okay to ask questions, and make assumptions.
 
-- **The "sleep" commands** throughout the codebase represent long-running asynchronous processes in a real-world scenario. They are intentionally included to simulate operations that take time to complete.
+- The "sleep" commands throughout the codebase represent long-running asynchronous processes in a real-world scenario. They are intentionally included to simulate operations that take time to complete.
 
-- **Focus on orchestration and efficiency**, not on modifying the actual code of the services or common libraries. Your task is to develop strategies for deploying, managing, and optimizing these services rather than changing their internal implementations.
+- Focus on orchestration and efficiency, not on modifying the actual code of the services or common libraries. Your task is to develop strategies for deploying, managing, and optimizing these services rather than changing their internal implementations.
 
-- **Consider scalability, reliability, and maintainability** in your solutions. How would these services operate in a cloud environment? How would you handle different deployment scenarios?
+- Consider scalability, reliability, and maintainability in your solutions. How would these services operate in a cloud environment? How would you handle different deployment scenarios?
 
 ## Mock Pipeline
 
-The CI pipeline is typically ran through GitHub Actions, however for this exercise we will be using a mock pipeline that you can run locally.
+The CI pipeline is typically ran through GitHub Actions, depending on your preference, you may run it via GitHub Actions or Locally based on the bash scripts in the `devops` folder.
+
+Additionally, you may want to use `act` to run the pipeline locally. (`brew install act` on macOS)
 
 When `ci` is passed, in a real CI environment the list of services changed on a given commit or PR will be passed as arguments to the pipeline.
 

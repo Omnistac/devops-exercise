@@ -8,7 +8,8 @@
       "build": "tsc && cp stocks.json dist/",
       "start": "node dist/app.js",
       "test": "node --test dist/app.test.js",
-      "deploy": "echo 'Deploying trading service' && sleep 10000"
+      "deploy": "echo 'Deploying trading service' && sleep 10",
+      "docker:push": "echo 'Pushing trading service dist at version $VERSION' && sleep 100"
     },
     "keywords": [],
     "author": "",
