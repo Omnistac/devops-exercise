@@ -142,4 +142,22 @@ describe('User Service', () => {
     assert.equal(livenessResponse.status, 200);
     assert.deepEqual(livenessResponse.body, { status: 'alive' });
   });
+
+
+  it('should demonstrate flaky behavior with user response time', async () => {
+    // Simulate random delay/failure
+    const randomValue = Math.random();
+    
+    if (randomValue < 0.25) {
+      // 25% chance of timeout
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      throw new Error('Request timed out');
+    }
+
+    const response = await request(app).get('/users');
+    
+    assert.equal(response.status, 200);
+    assert.ok(Array.isArray(Object.values(response.body)));
+    assert.ok(Object.values(response.body).length > 0);
+  });
 }); 

@@ -95,14 +95,14 @@ The CI pipeline is typically ran through GitHub Actions, depending on your prefe
 
 Additionally, you may want to use `act` to run the pipeline locally. (`brew install act` on macOS)
 
-When `ci` is passed, in a real CI environment the list of services changed on a given commit or PR will be passed as arguments to the pipeline.
+When `ci` is passed, in a real CI environment the list of services/modules changed on a given commit or PR will be passed as arguments to the pipeline.
 
 ```bash
 # run a CI pipeline, passing changed modules as "all"
 ./pipeline.sh ci all
 
 # run a CI pipeline with the changed contexts of "user-service" and "trading-service"
-./pipeline.sh ci user-service trading-service
+./pipeline.sh ci user-service,trading-service
 
 # run a CD pipeline
 ./pipeline.sh cd
@@ -122,6 +122,8 @@ You can run the CI "pipeline" with the following command:
 ./pipeline.sh ci all
 ```
 
+> [NOTE]
+> As a reminder, we're focused on the CI/CD Pipeline, and not the actual implementation of the services. 
 
 ### Problem 2 - The User Service tests are flaky!
 
@@ -132,10 +134,13 @@ Investigate if the pipeline can be improved, to handle this use case.
 Again - you can run the pipeline with the following command:
 
 ```bash
-./pipeline.sh ci user-service
+./pipeline.sh ci all 
 ```
 
 Run it a few times to detect the flakiness, and recommend a solution.
+
+> [NOTE]
+> As a reminder, we're focused on the CI/CD Pipeline, and not the actual implementation of the services. 
 
 
 ### Problem 3 - CD is getting slow!
