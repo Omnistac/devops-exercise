@@ -1,29 +1,28 @@
 {
-    "name": "@monorepo/user-service",
-    "version": "1.0.0",
-    "description": "User service",
-    "main": "dist/app.js",
-    "types": "dist/app.d.ts",
-    "scripts": {
-      "build": "tsc && cp user.json dist/",
-      "start": "node dist/app.js",
-      "test": "node --test dist/app.test.js",
-      "deploy": "echo 'Deploying user service' && sleep 10",
-      "docker:push": "echo 'Pushing user service dist at version $VERSION' && sleep 1000"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "express": "^5.0.0-beta.1",
-      "@monorepo/logger": "workspace:*",
-      "@monorepo/health": "workspace:*"
-    },
-    "devDependencies": {
-      "@types/node": "^22.13.9",
-      "@types/express": "^4.17.21",
-      "supertest": "^6.3.3",
-      "@types/supertest": "^6.0.2"
-    }
-  }
-  
+	"name": "@monorepo/user-service",
+	"version": "1.0.0",
+	"description": "User service",
+	"main": "dist/app.js",
+	"types": "dist/app.d.ts",
+	"scripts": {
+		"build": "tsc && cp user.json dist/",
+		"start": "node dist/app.js",
+		"test": "node --test dist/app.test.js",
+		"deploy": "echo 'Deploying user service' && sleep 10",
+		"docker:push": "echo 'Pushing user service dist at version $VERSION' && sleep 1000"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^5.0.0-beta.1",
+		"@monorepo/logger": "workspace:*",
+		"@monorepo/health": "workspace:*"
+	},
+	"devDependencies": {
+		"@types/node": "^22.13.9",
+		"@types/express": "^4.17.21",
+		"supertest": "^6.3.3",
+		"@types/supertest": "^6.0.2"
+	}
+}

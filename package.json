@@ -1,20 +1,23 @@
 {
-  "name": "devops-exercise",
-  "version": "1.0.0",
-  "description": "DevOps exercise for monorepo setup",
-  "scripts": {
-    "build": "pnpm -r build",
-    "test": "pnpm -r test",
-    "start:user": "pnpm --filter @monorepo/user-service start",
-    "start:trading": "pnpm --filter @monorepo/trading-service start",
-    "dev:user": "nodemon -w services/user -e ts -x \"pnpm --filter @monorepo/user-service start\"",
-    "dev:trading": "nodemon -w services/trading -e ts -x \"pnpm --filter @monorepo/trading-service start\""
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "typescript": "^5.8.2",
-    "nodemon": "^3.0.2"
-  }
+	"name": "devops-exercise",
+	"version": "1.0.0",
+	"description": "DevOps exercise for monorepo setup",
+	"scripts": {
+		"build": "pnpm -r build",
+		"test": "pnpm -r test",
+		"start:user": "pnpm --filter @monorepo/user-service start",
+		"start:trading": "pnpm --filter @monorepo/trading-service start",
+		"dev:user": "nodemon -w services/user -e ts -x \"pnpm --filter @monorepo/user-service start\"",
+		"dev:trading": "nodemon -w services/trading -e ts -x \"pnpm --filter @monorepo/trading-service start\""
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"nodemon": "^3.0.2",
+		"typescript": "^5.8.2"
+	},
+	"dependencies": {
+		"@biomejs/biome": "^1.9.4"
+	}
 }

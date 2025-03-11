@@ -1,29 +1,28 @@
 {
-    "name": "@monorepo/trading-service",
-    "version": "1.0.0",
-    "description": "Trading service",
-    "main": "dist/app.js",
-    "types": "dist/app.d.ts",
-    "scripts": {
-      "build": "tsc && cp stocks.json dist/",
-      "start": "node dist/app.js",
-      "test": "node --test dist/app.test.js",
-      "deploy": "echo 'Deploying trading service' && sleep 10",
-      "docker:push": "echo 'Pushing trading service dist at version $VERSION' && sleep 100"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "express": "^5.0.0-beta.1",
-      "@monorepo/logger": "workspace:*",
-      "@monorepo/health": "workspace:*"
-    },
-    "devDependencies": {
-      "@types/node": "^22.13.9",
-      "@types/express": "^4.17.21",
-      "supertest": "^6.3.3",
-      "@types/supertest": "^6.0.2"
-    }
-  }
-  
+	"name": "@monorepo/trading-service",
+	"version": "1.0.0",
+	"description": "Trading service",
+	"main": "dist/app.js",
+	"types": "dist/app.d.ts",
+	"scripts": {
+		"build": "tsc && cp stocks.json dist/",
+		"start": "node dist/app.js",
+		"test": "node --test dist/app.test.js",
+		"deploy": "echo 'Deploying trading service' && sleep 10",
+		"docker:push": "echo 'Pushing trading service dist at version $VERSION' && sleep 100"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^5.0.0-beta.1",
+		"@monorepo/logger": "workspace:*",
+		"@monorepo/health": "workspace:*"
+	},
+	"devDependencies": {
+		"@types/node": "^22.13.9",
+		"@types/express": "^4.17.21",
+		"supertest": "^6.3.3",
+		"@types/supertest": "^6.0.2"
+	}
+}

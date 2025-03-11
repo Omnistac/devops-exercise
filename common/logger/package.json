@@ -1,18 +1,17 @@
 {
-    "name": "@monorepo/logger",
-    "version": "1.0.0",
-    "description": "Simple logger module",
-    "main": "dist/lib.js",
-    "types": "dist/lib.d.ts",
-    "scripts": {
-      "build": "tsc",
-      "test": "node --test dist/lib.test.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-      "@types/node": "^20.10.0"
-    }
-  }
-  
+	"name": "@monorepo/logger",
+	"version": "1.0.0",
+	"description": "Simple logger module",
+	"main": "dist/lib.js",
+	"types": "dist/lib.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"test": "node --test dist/lib.test.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^20.10.0"
+	}
+}

@@ -1,28 +1,26 @@
-import { sleep } from "./utils";
+import {
+	KAFKA_TOPICS_TO_CLEAN,
+	cleanTopic,
+	cleanupTopics,
+	initClient,
+	stopConsumers,
+	validateCleaned,
+} from "@monorepo/integrations/kafka";
 
-const KAFKA_TOPICS_TO_CLEAN = [
-    'user-events',
-    'stock-events',
-    'trade-events',
-    'notification-events',
-    'maintenance-events',
-]
-
-
-async function main() {
-    console.log('Starting maintenance script for kafka');
-    await sleep(1000);
-    console.log('Cleaning kafka topics')
-    for (const topic of KAFKA_TOPICS_TO_CLEAN) {
-        console.log(`Cleaning topic: ${topic}`);
-        await sleep(2000);
-    }
-    console.log('Asserting kafka topics are cleaned')
-    await sleep(3000);
+export async function main() {
+	console.log("Starting maintenance script for kafka");
+	await initClient();
+	console.log("Cleaning kafka topics");
+	for (const topic of KAFKA_TOPICS_TO_CLEAN) {
+		await cleanTopic(topic);
+	}
+	console.log("Asserting kafka topics are cleaned");
+	await validateCleaned();
 }
 
-main().then(() => {
-    console.log('Maintenance script completed');
-}).catch((error) => {
-    console.error('Maintenance script failed', error);
-});
+export async function cleanup() {
+	console.log("Cleaning up half performed maintenance for kafka");
+	await cleanupTopics();
+	console.log("Stopping hung kafka consumers");
+	await stopConsumers();
+}

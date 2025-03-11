@@ -1,32 +1,32 @@
 {
-  "AAPL": {
-    "id": "AAPL",
-    "name": "Apple Inc.",
-    "price": 150.25,
-    "owned": "user1"
-  },
-  "MSFT": {
-    "id": "MSFT",
-    "name": "Microsoft Corporation",
-    "price": 245.75,
-    "owned": "user2"
-  },
-  "GOOGL": {
-    "id": "GOOGL",
-    "name": "Alphabet Inc.",
-    "price": 2800.10,
-    "owned": "user3"
-  },
-  "AMZN": {
-    "id": "AMZN",
-    "name": "Amazon.com, Inc.",
-    "price": 3400.50,
-    "owned": "user4"
-  },
-  "TSLA": {
-    "id": "TSLA",
-    "name": "Tesla, Inc.",
-    "price": 900.80,
-    "owned": "user5"
-  }
-} 
+	"AAPL": {
+		"id": "AAPL",
+		"name": "Apple Inc.",
+		"price": 150.25,
+		"owned": "user1"
+	},
+	"MSFT": {
+		"id": "MSFT",
+		"name": "Microsoft Corporation",
+		"price": 245.75,
+		"owned": "user2"
+	},
+	"GOOGL": {
+		"id": "GOOGL",
+		"name": "Alphabet Inc.",
+		"price": 2800.1,
+		"owned": "user3"
+	},
+	"AMZN": {
+		"id": "AMZN",
+		"name": "Amazon.com, Inc.",
+		"price": 3400.5,
+		"owned": "user4"
+	},
+	"TSLA": {
+		"id": "TSLA",
+		"name": "Tesla, Inc.",
+		"price": 900.8,
+		"owned": "user5"
+	}
+}

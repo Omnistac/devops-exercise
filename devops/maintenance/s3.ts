@@ -1,17 +1,20 @@
-import { sleep } from "./utils";
+import {
+	cleanUpOldBlobs,
+	initClient,
+	moveLargeBlobsToGlacier,
+	stopHungUploads,
+} from "@monorepo/integrations/s3";
 
-async function main() {
-    console.log('Starting maintenance script for s3');
-    await sleep(1000);
-    console.log('Moving large blobs to glacier')
-    await sleep(2000);
-    console.log('Cleaning up old blobs')
-    await sleep(3000);
+export async function main() {
+	console.log("Starting maintenance script for s3");
+	await initClient();
+	console.log("Moving large blobs to glacier");
+	await moveLargeBlobsToGlacier();
+	console.log("Cleaning up old blobs");
+	await cleanUpOldBlobs();
 }
 
-main().then(() => {
-    console.log('Maintenance script completed');
-}).catch((error) => {
-    console.error('Maintenance script failed', error);
-});
-
+export async function cleanup() {
+	console.log("Cleaning up half performed maintenance for s3");
+	await stopHungUploads();
+}

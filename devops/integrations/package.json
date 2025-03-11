@@ -1,5 +1,5 @@
 {
-	"name": "@monorepo/maintenance",
+	"name": "@monorepo/integrations",
 	"version": "1.0.0",
 	"description": "Maintenance scripts for preparing and modifying the destination environment",
 	"main": "dist/run.js",
@@ -7,7 +7,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "tsc",
-		"maintenance": "pnpm -F integrations build && tsx run.ts"
+		"maintenance": "tsx run.ts"
 	},
 	"keywords": [],
 	"author": "",
@@ -18,7 +18,6 @@
 	},
 	"dependencies": {
 		"chalk": "^5.4.1",
-		"@monorepo/integrations": "workspace:*",
 		"commander": "^13.1.0",
 		"execa": "^9.5.2"
 	}
