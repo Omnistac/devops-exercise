@@ -1,11 +1,15 @@
 import {
-	checkForDeadlocks,
+	db
+} from "@monorepo/integrations";
+
+const {
 	initClient,
 	modifyIndexTriggers,
-	stopHungQueries,
 	updateIndexes,
 	vacuumDatabase,
-} from "@monorepo/integrations/db";
+	checkForDeadlocks,
+	stopHungQueries
+} = db;
 
 export async function main() {
 	console.log("Starting maintenance script");

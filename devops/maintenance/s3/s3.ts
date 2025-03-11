@@ -1,9 +1,13 @@
 import {
+	s3
+} from "@monorepo/integrations";
+
+const {
 	cleanUpOldBlobs,
 	initClient,
 	moveLargeBlobsToGlacier,
 	stopHungUploads,
-} from "@monorepo/integrations/s3";
+} = s3;
 
 export async function main() {
 	console.log("Starting maintenance script for s3");

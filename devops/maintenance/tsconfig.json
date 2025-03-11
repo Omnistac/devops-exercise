@@ -1,8 +1,15 @@
 {
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
-		"outDir": "./dist"
+		"outDir": "./dist",
+		"module": "ESNext",
+		"moduleResolution": "NodeNext",
+		"target": "ESNext",
+		"lib": ["ESNext"],
+		"strict": true,
+		"esModuleInterop": true,
+		
 	},
-	"include": ["*.ts"],
+	"include": ["*.ts", "s3/s3.spec.ts", "s3/s3.ts", "db/database.ts", "kafka/kafka.ts"],
 	"exclude": ["node_modules", "dist"]
 }

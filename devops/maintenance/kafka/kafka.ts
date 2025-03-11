@@ -1,11 +1,15 @@
 import {
-	KAFKA_TOPICS_TO_CLEAN,
+	kafka,
+} from "@monorepo/integrations";
+
+const {
+	initClient,
 	cleanTopic,
 	cleanupTopics,
-	initClient,
-	stopConsumers,
 	validateCleaned,
-} from "@monorepo/integrations/kafka";
+	stopConsumers,
+	KAFKA_TOPICS_TO_CLEAN
+} = kafka;
 
 export async function main() {
 	console.log("Starting maintenance script for kafka");

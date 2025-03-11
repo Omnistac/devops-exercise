@@ -2,12 +2,17 @@
 	"name": "@monorepo/integrations",
 	"version": "1.0.0",
 	"description": "Maintenance scripts for preparing and modifying the destination environment",
-	"main": "dist/run.js",
-	"types": "dist/run.d.ts",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"type": "module",
+	"exports": {
+		".": "./dist/index.js",
+		"./db": "./dist/db.js",
+		"./kafka": "./dist/kafka.js",
+		"./s3": "./dist/s3.js"
+	},
 	"scripts": {
-		"build": "tsc",
-		"maintenance": "tsx run.ts"
+		"build": "tsc"
 	},
 	"keywords": [],
 	"author": "",
