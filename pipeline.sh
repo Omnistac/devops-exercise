@@ -5,9 +5,11 @@
 # ACME Corp CI/CD Pipeline
 # Accepts two arguments:
 # 1. The type of pipeline to run (ci or cd)
-# 2. The modules the developer has changed, separated by commas
 #
 ########################################################
+
+# Exit immediately if a command exits with a non-zero status
+set -e
 
 echo "Running the ACME Corp CI/CD Pipeline"
 

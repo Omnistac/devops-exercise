@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { s3 } from "@monorepo/integrations";
-import { cleanup, main } from "./s3";
+import { cleanup, main } from "./s3.js";
 
 vi.mock("@monorepo/integrations", () => ({
     s3: {

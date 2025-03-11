@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { kafka } from "@monorepo/integrations";
-import { cleanup, main } from "./kafka";
+import { cleanup, main } from "./kafka.js";
 
 vi.mock("@monorepo/integrations", () => ({
     kafka: {

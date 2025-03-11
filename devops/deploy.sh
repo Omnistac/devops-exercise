@@ -8,6 +8,10 @@ function red_echo() {
     echo -e "\033[31m$1\033[0m"
 }
 
+green_echo "Running maintenance"
+
+pnpm -F maintenance run maintenance
+
 green_echo "Beginning deployment of the monorepo"
 
 pnpm -F user-service run deploy

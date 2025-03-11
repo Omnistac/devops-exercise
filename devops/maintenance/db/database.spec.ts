@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { db } from "@monorepo/integrations";
-import { cleanup, main } from "./database";
+import { cleanup, main } from "./database.js";
 
 vi.mock("@monorepo/integrations", () => ({
     db: {

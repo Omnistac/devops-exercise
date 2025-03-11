@@ -42,15 +42,6 @@ This exercise is designed to help us understand how you:
    pnpm test
    ```
 
-5. Start services individually:
-   ```bash
-   # Start user service
-   pnpm start:user
-   
-   # Start trading service
-   pnpm start:trading
-   ```
-
 ## 📁 Project Structure
 
 ```
@@ -60,12 +51,20 @@ devops-exercise/
 │   ├── health/           # Health check module (readiness & liveness probes)
 │   └── logger/           # Logging module
 │
+├── devops/               # devops scripts
+│   ├── integrations/     # Integration tests
+│   └── maintenance/      # Maintenance scripts
+│
 ├── services/             # Microservices
 │   ├── user/             # User management service
 │   └── trading/          # Trading and stock management service
 │
 └── pnpm-workspace.yaml   # Workspace definition for monorepo
 ```
+
+
+
+
 
 ### Common Modules
 
@@ -78,6 +77,12 @@ devops-exercise/
 - **user**: A service that manages user data, stored in a JSON file. Provides endpoints to retrieve user information.
 
 - **trading**: A service for stock trading operations. Manages stocks and ownership, allowing users to swap ownership of stocks between them.
+
+### DevOps Modules
+
+- **integrations**: A module for database/kafka/s3 integrations
+
+- **maintenance**: A module for maintenance scripts/orchestration.
 
 ## 🔍 Important Considerations
 
@@ -93,16 +98,9 @@ devops-exercise/
 
 The CI pipeline is typically ran through GitHub Actions, depending on your preference, you may run it via GitHub Actions or Locally based on the bash scripts in the `devops` folder.
 
-Additionally, you may want to use `act` to run the pipeline locally. (`brew install act` on macOS)
-
-When `ci` is passed, in a real CI environment the list of services/modules changed on a given commit or PR will be passed as arguments to the pipeline.
-
 ```bash
-# run a CI pipeline, passing changed modules as "all"
-./pipeline.sh ci all
-
-# run a CI pipeline with the changed contexts of "user-service" and "trading-service"
-./pipeline.sh ci user-service,trading-service
+# run a CI pipeline
+./pipeline.sh ci
 
 # run a CD pipeline
 ./pipeline.sh cd
@@ -110,7 +108,8 @@ When `ci` is passed, in a real CI environment the list of services/modules chang
 
 ## ❓ Problems
 
-### Problem 1 - CI is getting Slow!
+
+## **Problem 1 (15 min) - CI is getting Slow**
 
 The developers at ACME corp are starting to grumble about how slow CI is becoming. Each PR is beginning to take longer and longer, and they're starting to get impatient.
 
@@ -119,45 +118,52 @@ You've been tasked with figuring out what's slowing down the CI pipeline and how
 You can run the CI "pipeline" with the following command:
 
 ```bash
-./pipeline.sh ci all
+./pipeline.sh ci 
 ```
 
-> [NOTE]
+> [!NOTE]
 > As a reminder, we're focused on the CI/CD Pipeline, and not the actual implementation of the services. 
 
-### Problem 2 - The User Service tests are flaky!
+> [!NOTE]
+> pnpm has quite a few filtering features, the docs are [here](https://pnpm.io/filtering)
 
-The developers at ACME corp are noticing that the User Service tests are flaky. They are failing around 15% of the time, resulting in a re-run of the pipeline.
+    
+## **Problem 2 (15 min) - The User Service Tests are Flaky!**
+
+The developers at ACME corp are noticing that the User Service tests are flaky. They are failing around 25% of the time, resulting in a re-run of the pipeline.
 
 Investigate if the pipeline can be improved, to handle this use case.
 
 Again - you can run the pipeline with the following command:
 
 ```bash
-./pipeline.sh ci all 
+./pipeline.sh ci 
 ```
 
 Run it a few times to detect the flakiness, and recommend a solution.
 
-> [NOTE]
+> [!NOTE]
 > As a reminder, we're focused on the CI/CD Pipeline, and not the actual implementation of the services. 
 
 
-### Problem 3 - CD is getting slow!
+## **Problem 3 (15 min) - Maintenance is getting slow!**
 
-When the production operators of ACME corp run the CD pipeline, they are starting to notice that the time it takes to run the pre-steps and deploy steps of each service is getting extremely long.
+The production operations team at ACME corp has to run a suite of scripts to perform "maintenance" on the platform. The maintenance script is a TypeScript project that runs database, kafka and S3 cleanup.
 
-Investigate the CD process and recommend a solution.
-
-Again - you can run the pipeline with the following command:
-
+It is ran with:
 ```bash
-./pipeline.sh cd
+pnpm -F maintenance maintenance --help
 ```
 
+However, of late the process has started to take a long time, and even worse, become flaky! When this task fails, the production operations team has to run it again with the `--cleanup` flag causing it to take even longer! 
 
+You are tasked with investigating the pipeline and refactoring it to complete faster, and improve error handling.
 
+The following commands may be helpful in your investigation:
 
-
-
-
+```
+pnpm -F maintenance maintenance --verbose
+pnpm -F maintenance maintenance --cleanup
+pnpm -F maintenance test
+pnpm -F maintenance coverage
+```

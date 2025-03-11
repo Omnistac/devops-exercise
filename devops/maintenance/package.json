@@ -7,7 +7,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "tsc",
-		"test": "vitest",
+		"test": "vitest run",
 		"coverage": "vitest --coverage",
 		"maintenance": "pnpm -F integrations build && tsx run.ts"
 	},
@@ -16,7 +16,6 @@
 	"license": "ISC",
 	"devDependencies": {
 		"@types/node": "^22.13.10",
-		"@vitest/coverage-v8": "3.0.8",
 		"tsx": "^4.19.3"
 	},
 	"dependencies": {

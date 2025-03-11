@@ -17,10 +17,10 @@ green_echo "Running tests for all packages"
 # build each package, required for testing
 for package in $pnpm_packages; do
     green_echo "Building $package"
-    result=$(pnpm --filter $package build)
-    if [ $? -ne 0 ]; then
+    pnpm --filter $package build
+    exit_code=$?
+    if [ $exit_code -ne 0 ]; then
         red_echo "Build failed for $package"
-        red_echo "$result"
         exit 1
     fi
 done
@@ -28,11 +28,10 @@ done
 # run tests for each package
 for package in $pnpm_packages; do
     green_echo "Running tests for $package"
-    result=$(pnpm --filter $package test)
-    if [ $? -ne 0 ]; then
+    pnpm --filter $package test
+    exit_code=$?
+    if [ $exit_code -ne 0 ]; then
         red_echo "Tests failed for $package"
-        red_echo "$result"
         exit 1
     fi
 done
-

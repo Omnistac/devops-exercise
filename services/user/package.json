@@ -9,7 +9,7 @@
 		"start": "node dist/app.js",
 		"test": "node --test dist/app.test.js",
 		"deploy": "echo 'Deploying user service' && sleep 10",
-		"docker:push": "echo 'Pushing user service dist at version $VERSION' && sleep 1000"
+		"docker:push": "echo 'Pushing user service dist at version ${VERSION}' && sleep 10"
 	},
 	"keywords": [],
 	"author": "",

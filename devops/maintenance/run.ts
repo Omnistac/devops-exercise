@@ -2,9 +2,9 @@ import chalk from "chalk";
 import { program } from "commander";
 
 import { $ } from "execa";
-import { main as database, cleanup as databaseCleanup } from "./db/database";
-import { main as kafka, cleanup as kafkaCleanup } from "./kafka/kafka";
-import { main as s3, cleanup as s3Cleanup } from "./s3/s3";
+import { main as database, cleanup as databaseCleanup } from "./db/database.js";
+import { main as kafka, cleanup as kafkaCleanup } from "./kafka/kafka.js";
+import { main as s3, cleanup as s3Cleanup } from "./s3/s3.js";
 
 const { green, yellow } = chalk;
 
